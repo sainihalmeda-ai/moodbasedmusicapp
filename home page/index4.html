@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>MoodTune — Face Scan + Neon UI</title>
+
+<!-- Face Detection -->
+<script defer src="https://unpkg.com/face-api.js@0.22.2/dist/face-api.min.js"></script>
+
+<!-- Neon Premium Icons -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+<link rel="stylesheet" href="style4.css" />
+</head>
+<body>
+
+<div id="bgLayer"></div><div class="frost"></div>
+
+<!-- ====================================================================== -->
+<!--                   MAIN UI FLIP WRAPPER (Do Not Modify)                -->
+<!-- ====================================================================== -->
+<div id="flipBox">
+
+  <!-- ================== FRONT (HOME PAGE) ================== -->
+  <div class="side" id="front">
+
+    <div class="topbar">
+      <button class="btn-icon" id="scanBtn"><i data-lucide="camera"></i></button>
+      <button class="btn-icon"><i data-lucide="mic"></i></button>
+      <button class="btn-icon" id="profileBtn"><i data-lucide="user"></i></button>
+    </div>
+
+    <div class="shell">
+
+      <!-- Vertical Navigation -->
+      <div class="vnav" id="vnav">
+        <button class="vbtn" data-target="home"><i data-lucide="home"></i></button>
+        <button class="vbtn" data-target="search"><i data-lucide="search"></i></button>
+        <button class="vbtn" data-target="songs"><i data-lucide="music"></i></button>
+        <button class="vbtn" data-target="podcasts"><i data-lucide="podcast"></i></button>
+        <button class="vbtn" data-target="merge"><i data-lucide="handshake"></i></button>
+      </div>
+
+      <!-- HOME WRAP -->
+      <div id="homeWrap" class="scrollable">
+        <h2 class="section-title">🎯 Home</h2>
+
+        <!-- ✅ ONLY THIS IS NOW HORIZONTAL -->
+        <div class="home-hero-horizontal"> <!-- changed from vertical -->
+          <button class="col-card col-style-2 active" data-homeview="all">
+            <div class="col-title big">All</div>
+          </button>
+
+          <button class="col-card col-style-2" data-homeview="mood">
+            <div class="col-title big">Mood Based Music</div>
+          </button>
+
+          <button class="col-card col-style-2" data-homeview="podcast">
+            <div class="col-title big">Podcast</div>
+          </button>
+        </div>
+
+        <!-- Dynamic Home Section -->
+        <div id="homeSections"></div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ================== BACK SIDE (FOR OTHER PAGES) ================== -->
+  <div class="side" id="back">
+    <div id="backInner" class="scrollable">
+      <div class="backHead">
+        <button class="btn-icon" id="backBtn"><i data-lucide="arrow-left"></i></button>
+        <div class="backTitle" id="backTitle">Page</div>
+        <div class="backTools" id="backTools"></div>
+      </div>
+      <div class="backBody" id="backBody"></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ============================= CAMERA MODAL ============================= -->
+<div id="cameraModal">
+  <button class="closeCam" id="closeCam">✕</button>
+  <div class="video-wrap"><video id="camera" autoplay playsinline></video></div>
+  <div class="status" id="camStatus">Scanning...</div>
+</div>
+
+
+<!-- ============================= PROFILE PANEL ============================= -->
+<div id="profilePanel">
+  <button class="btn-icon closeProfile"><i data-lucide="arrow-left"></i></button>
+  <h2>Profile</h2>
+  <div class="dp-box" id="dpBox">+</div>
+  <input id="dpUpload" type="file" accept="image/*" style="display:none"/>
+  <input id="userName" placeholder="Enter your name">
+  <input id="userBio" placeholder="Bio (optional)">
+  <button class="save-btn" id="saveProfile">Save</button>
+</div>
+
+
+<!-- ========================== TEMPLATES (BACK PAGE) ======================== -->
+<template id="tpl-search">
+  <h2 class="section-title">🔍 Search</h2>
+  <input id="searchInput" class="searchBar" placeholder="Search songs…">
+  <div id="searchResults" class="track-list"></div>
+</template>
+
+<template id="tpl-songs">
+  <h2 class="section-title">🎵 Recently Played Songs</h2>
+  <div id="recentSongs" class="track-list"></div>
+</template>
+
+<template id="tpl-podcasts">
+  <h2 class="section-title">🎙 Recently Played Podcasts</h2>
+  <div id="recentPodcast" class="track-list"></div>
+</template>
+
+<template id="tpl-merge">
+  <h2 class="section-title">🤝 Merge — Listen Together</h2>
+  <p>Invite your friends to listen together.</p>
+  <div class="merge-box">
+    <input id="inviteLink" class="mini-input" readonly>
+    <button class="mini-btn" id="copyInvite">Copy Link</button>
+  </div>
+</template>
+
+<script src="script4.js"></script>
+</body>
+</html>

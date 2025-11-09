@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MoodTune – Auth</title>
+  <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+  <div class="custom-bg" id="customBg"></div>
+
+  <!-- ✅ Added id="main-auth" -->
+  <div class="auth-container" id="main-auth">
+    <!-- Login Form (default) -->
+    <form id="loginForm">
+      <h1 class="hi-text">Hi</h1>
+      <div class="form-group">
+        <label for="loginEmail">Email</label>
+        <input type="email" id="loginEmail" placeholder="Enter your email" required>
+      </div>
+      <div class="form-group">
+        <label for="loginPassword">Password</label>
+        <input type="password" id="loginPassword" placeholder="Enter your password" required>
+      </div>
+      <button type="submit">Log In</button>
+      <a href="#" class="forgot-password">Forgot your password?</a>
+
+      <div class="divider">or continue with</div>
+
+      <button class="social-btn google" id="googleLogin">
+        <span>Continue with Google</span>
+      </button>
+      <button class="social-btn facebook" id="facebookLogin">
+        <span>Continue with Facebook</span>
+      </button>
+      <button class="social-btn apple" id="appleLogin">
+        <span>Continue with Apple</span>
+      </button>
+
+      <div class="switch-link">
+        Don't have an account? <a id="showSignupLink">Sign Up</a>
+      </div>
+    </form>
+
+    <!-- Signup Form (hidden by default) -->
+    <form id="signupForm" class="hidden">
+      <h1 class="hi-text">Join Us</h1>
+      <div class="form-group">
+        <label for="signupName">Full Name</label>
+        <input type="text" id="signupName" placeholder="Enter your full name" required>
+      </div>
+      <div class="form-group">
+        <label for="signupEmail">Email</label>
+        <input type="email" id="signupEmail" placeholder="Enter your email" required>
+      </div>
+      <div class="form-group">
+        <label for="signupPassword">Password</label>
+        <input type="password" id="signupPassword" placeholder="Create a strong password" required>
+        <div class="password-rules" id="passwordRules">
+          <div class="rule" id="ruleLength">At least 8 characters</div>
+          <div class="rule" id="ruleUpper">One uppercase letter</div>
+          <div class="rule" id="ruleNumber">One number</div>
+          <div class="rule" id="ruleSpecial">One special character (!@#$%^&*)</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+      </div>
+      <button type="submit">Create Account</button>
+
+      <div class="divider">or sign up with</div>
+
+      <button class="social-btn google" id="googleSignup">
+        <span>Continue with Google</span>
+      </button>
+      <button class="social-btn facebook" id="facebookSignup">
+        <span>Continue with Facebook</span>
+      </button>
+      <button class="social-btn apple" id="appleSignup">
+        <span>Continue with Apple</span>
+      </button>
+
+      <div class="switch-link">
+        Already have an account? <a id="showLoginLink">Log In</a>
+      </div>
+    </form>
+  </div>
+
+  <!-- Background customization panel -->
+  <div class="bg-customize">
+    <h3>Set Background Image</h3>
+    <div class="bg-input">
+      <input type="text" id="bgUrl" placeholder="Paste image URL (e.g., https://...)">
+      <button id="applyBg">Apply</button>
+    </div>
+    <button id="resetBg">Reset to Default</button>
+  </div>
+
+  <script src="script1.js"></script>
+</body>
+</html>
