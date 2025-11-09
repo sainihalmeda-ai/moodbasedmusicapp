@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Music App • Tell us your name</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Nunito:wght@700;900&display=swap" rel="stylesheet">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Animated tiny instruments layer -->
+  <div class="sprites" aria-hidden="true" id="sprites"></div>
+
+  <!-- Foreground content -->
+  <main class="wrap">
+    <section class="card" role="region" aria-labelledby="title">
+      <span class="badge" aria-hidden="true">🎵 Music App • Info</span>
+      <h1 id="title">Welcome! Let’s get to know you</h1>
+      <p class="sub">Tell us your name to personalize your music journey.</p>
+
+      <form class="form" id="nameForm" autocomplete="on">
+        <label for="name">What is your name?</label>
+        <input id="name" name="name" type="text" placeholder="What is your name?" inputmode="text" maxlength="40" required />
+        <button class="btn" type="submit" aria-label="Continue">Continue →</button>
+      </form>
+
+      <div class="footnote">
+        <span class="kbd">Enter</span> to submit • Your name is saved locally
+      </div>
+      <div class="greet" id="greet" role="status" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <!-- External JavaScript -->
+  <script src="node.js" defer></script>
+</body>
+</html>

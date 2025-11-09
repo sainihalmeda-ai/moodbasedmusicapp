@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Music App - Profile</title>
+
+  <!-- ✅ Premium Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="fi.css" />
+</head>
+<body>
+  <div class="profile-wrapper">
+    <header><h1>My Profile</h1></header>
+
+    <!-- Profile Section -->
+    <section class="profile-section">
+      <img src="https://via.placeholder.com/120" alt="Profile" class="profile-pic" id="display-pic">
+      <div class="user-info">
+        <h2 id="display-name">Sanjay Rathod</h2>
+        <p id="display-bio">🎵 Playback Singer | Creating melodies for every mood</p>
+        <div class="profile-buttons">
+          <button class="btn primary" id="editBtn">Edit Profile</button>
+          <button class="btn secondary" id="settingsBtn">Settings</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats">
+      <div class="stat-card"><h3 id="songsPlayed">230</h3><p>Songs Played</p></div>
+      <div class="stat-card"><h3 id="playlistCount">10</h3><p>Playlists</p></div>
+      <div class="stat-card"><h3 id="listeningTime">5h 12m</h3><p>Listening Time</p></div>
+    </section>
+
+    <!-- Playlists -->
+    <section class="playlist-section">
+      <div class="section-header">
+        <h3>📂 My Playlists</h3>
+        <button class="btn small" id="addPlaylistBtn">+ Add Playlist</button>
+      </div>
+      <div class="folder-grid" id="playlistContainer">
+        <div class="folder-card">
+          <div class="folder-icon">🎧</div>
+          <h4>Workout Mix</h4>
+          <p>15 Songs</p>
+          <button class="remove-btn">🗑️</button>
+        </div>
+        <div class="folder-card">
+          <div class="folder-icon">🌙</div>
+          <h4>Chill Nights</h4>
+          <p>22 Songs</p>
+          <button class="remove-btn">🗑️</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Liked Songs -->
+    <section class="liked-section">
+      <div class="section-header">
+        <h3>💖 Liked Songs</h3>
+        <div class="liked-actions">
+          <button class="btn small" id="addLikedBtn">+ Add Liked Song</button>
+          <button class="btn small" id="viewAllLiked">Show All</button>
+        </div>
+      </div>
+      <div class="folder-grid" id="likedSongsContainer">
+        <div class="folder-card liked-item-card">
+          <div class="folder-icon">🎶</div>
+          <h4>Perfect</h4>
+          <p>Ed Sheeran</p>
+          <button class="remove-btn">🗑️</button>
+        </div>
+        <div class="folder-card liked-item-card">
+          <div class="folder-icon">🎶</div>
+          <h4>Tum Hi Ho</h4>
+          <p>Arijit Singh</p>
+          <button class="remove-btn">🗑️</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Modals -->
+  <div class="modal" id="editModal">
+    <div class="modal-box">
+      <h2>Edit Profile</h2>
+      <label>Profile Picture</label>
+      <input type="file" id="profilePicInput" accept="image/*">
+      <label>Username</label>
+      <input type="text" id="usernameInput" placeholder="Enter your name">
+      <label>Bio</label>
+      <textarea id="bioInput" rows="3" placeholder="Write something..."></textarea>
+      <div class="modal-actions">
+        <button class="btn primary" id="saveProfile">Save</button>
+        <button class="btn secondary" id="closeEdit">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Settings Modal -->
+  <div class="modal" id="settingsModal">
+    <div class="modal-box">
+      <h2>Settings</h2>
+      <label>Theme Mode</label>
+      <select id="themeSelect">
+        <option value="dark">Dark</option>
+        <option value="light">Light</option>
+      </select>
+      <label>Language</label>
+      <select id="langSelect">
+        <option>English</option>
+        <option>Telugu</option>
+        <option>Hindi</option>
+        <option>Tamil</option>
+        <option>Marathi</option>
+      </select>
+      <label>Notifications</label>
+      <input type="checkbox" id="notifToggle" checked>
+      <div class="modal-actions">
+        <button class="btn danger" id="logoutBtn">Logout</button>
+        <button class="btn secondary" id="closeSettings">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Playlist Modal -->
+  <div class="modal" id="addPlaylistModal">
+    <div class="modal-box">
+      <h2>Create New Playlist</h2>
+      <label>Playlist Name</label>
+      <input type="text" id="playlistNameInput" placeholder="Enter playlist name">
+      <label>Description</label>
+      <textarea id="playlistDescInput" rows="3" placeholder="Describe your playlist..."></textarea>
+      <div class="modal-actions">
+        <button class="btn primary" id="savePlaylist">Save</button>
+        <button class="btn secondary" id="closeAddPlaylist">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Liked Song Modal -->
+  <div class="modal" id="addLikedModal">
+    <div class="modal-box">
+      <h2>Add Liked Song</h2>
+      <label>Song Title</label>
+      <input type="text" id="likedSongName" placeholder="Enter song name">
+      <label>Artist</label>
+      <input type="text" id="likedSongArtist" placeholder="Enter artist name">
+      <div class="modal-actions">
+        <button class="btn primary" id="saveLikedSong">Add Song</button>
+        <button class="btn secondary" id="closeLikedModal">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="le.js"></script>
+</body>
+</html>

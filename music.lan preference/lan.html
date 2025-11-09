@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Music App • Language Preference</title>
+  <link rel="stylesheet" href="gua.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🎵 Choose Your Music Language Preferences</h1>
+      <p>Select your favorite languages to personalize your music experience.</p>
+    </header>
+
+    <!-- First Preference -->
+    <section class="preference">
+      <h2>First Language Preference (Select One)</h2>
+      <form id="firstPref" class="language-list single-choice">
+        <label><input type="radio" name="firstLang" value="Telugu">
+          <img src=spb.png alt="SP Balasubrahmanyam">
+          Telugu – S.P. Balasubrahmanyam 🎙️
+        </label>
+
+        <label><input type="radio" name="firstLang" value="English">
+          <img src=justin.webp alt="Justin Bieber">
+          English – Justin Bieber 🎤
+        </label>
+
+        <label><input type="radio" name="firstLang" value="Tamil">
+          <img src=ani.webp alt="Anirudh Ravichander">
+          Tamil – Anirudh Ravichander 🎧
+        </label>
+
+        <label><input type="radio" name="firstLang" value="Malayalam">
+          <img src=Yesudas.JPG alt="K.J. Yesudas">
+          Malayalam – K.J. Yesudas 🎵
+        </label>
+
+        <label><input type="radio" name="firstLang" value="Kannada">
+          <img src=sonunigam.jpg alt="Sonu Nigam">
+          Kannada – Sonu Nigam 🎶
+        </label>
+
+        <label><input type="radio" name="firstLang" value="Marathi">
+          <img src=sanju_Rathod.jpg alt="Sanjay Rathod">
+          Marathi – Sanjay Rathod 🎸
+        </label>
+
+        <label><input type="radio" name="firstLang" value="Hindi">
+          <img src=hindi.webp alt="Mohammed Rafi">
+          Hindi – Mohammed Rafi 🎶
+        </label>
+      </form>
+    </section>
+
+    <!-- Second Preference -->
+    <section class="preference">
+      <h2>Second Language Preferences (Select Multiple)</h2>
+      <form id="secondPref" class="language-list multi-choice">
+        <label><input type="checkbox" name="secondLang" value="Telugu">
+          <img src=spb.png alt="SP Balasubrahmanyam">
+          Telugu – S.P. Balasubrahmanyam 🎙️
+        </label>
+
+        <label><input type="checkbox" name="secondLang" value="English">
+          <img src=justin.webp alt="Justin Bieber">
+          English – Justin Bieber 🎤
+        </label>
+
+        <label><input type="checkbox" name="secondLang" value="Tamil">
+          <img src="ani.webp" alt="Anirudh Ravichander">
+          Tamil – Anirudh Ravichander 🎧
+        </label>
+
+        <label><input type="checkbox" name="secondLang" value="Malayalam">
+          <img src=Yesudas.JPG alt="K.J. Yesudas">
+          Malayalam – K.J. Yesudas 🎵
+        </label>
+
+        <label><input type="checkbox" name="secondLang" value="Kannada">
+          <img src=sonunigam.jpg alt="Sonu Nigam">
+          Kannada – Sonu Nigam 🎶
+        </label>
+
+        <label><input type="checkbox" name="secondLang" value="Marathi">
+          <img src=sanju_Rathod.jpg alt="Sanjay Rathod">
+          Marathi – Sanjay Rathod 🎸
+        </label>
+
+        <label><input type="checkbox" name="secondLang" value="Hindi">
+          <img src=hindi.webp alt="Mohammed Rafi">
+          Hindi – Mohammed Rafi 🎶
+        </label>
+      </form>
+    </section>
+
+    <button id="submitBtn" class="btn">Save Preferences🎶 </button>
+
+    <div id="result"></div>
+  </div>
+
+  <script src="ge.js" defer></script>
+</body>
+</html>
